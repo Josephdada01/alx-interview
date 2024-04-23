@@ -9,16 +9,19 @@ def pascal_triangle(n):
     Returns an empty list if n <= 0
     You can assume n will be always an integer
     """
-    if n <= 0:
-        return []
     triangle = []
 
+    if n <= 0:
+        triangle
+
     for i in range(n):
-        row = [1]  # the first element in a row
-        if i > 0:
-            # generating the remaining rows based on the previous row
-            for j in range(1, i):
-                row.append(triangle[i - 1][j - 1] + triangle[i - 1][j])
-            row.append(1)
-        triangle.append(row)
+        temporary_list = []  # the first element in a row
+        # generating the remaining rows based on the previous row
+        for j in range(i+1):
+            if j == 0 or j == i:
+                temporary_list.append(1)
+            else:
+                temporary_list.append(triangle[i - 1][j - 1] +
+                                      triangle[i - 1][j])
+        triangle.append(temporary_list)
     return triangle
