@@ -1,12 +1,18 @@
 #!/usr/bin/python3
-'''The minimum operations coding challenge.
-'''
+"""
+In a text file, there is a single character H. Your text editor
+can execute only two operations in this file: Copy All and Paste.
+Given a number n,
+write a method that calculates the fewest number of operations
+needed to result in exactly n H characters in the file.
+"""
 
 
 def minOperations(n):
-    '''Computes the fewest number of operations needed to result
-    in exactly n H characters.
-    '''
+    """
+    Returns an integer
+    If n is impossible to achieve, return 0
+    """
     if not isinstance(n, int):
         return 0
     ops_count = 0
