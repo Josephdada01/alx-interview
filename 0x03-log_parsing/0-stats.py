@@ -2,7 +2,7 @@
 """Log parsing"""
 
 import re
-
+import sys
 
 def extract_input(input_line):
     """
@@ -82,9 +82,9 @@ def run():
             line_num += 1
             if line_num % 10 == 0:
                 print_statistics(total_file_size, status_codes_stats)
-    except (KeyboardInterrupt, EOFError):
+    except EOFError:
         print_statistics(total_file_size, status_codes_stats)
 
 
-if __name__ == '_main_':
+if __name__ == '__main__':
     run()
